@@ -47,13 +47,4 @@ public class BinaryHeap {
         // grow it
     }
 
-
-
-
-    // DELETE
-    public void print(){
-        for(int i=0; i<data.length; i++){
-            System.out.println(data[i]);
-        }
-    }
 }
