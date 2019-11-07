@@ -9,21 +9,21 @@ public class BinaryHeap {
         }
         data[size++] = priority; // adds the item to the array
         // now must check to make sure that the item is in the correct place
-        int child = size-1;
-        int parent = (child-1)/2;
+        int child = size-1;         // the index of the child in the array
+        int parent = (child-1)/2;   // the index of the child's parent in the array
         // while the parent's data is greater than the child's, the items need to be swapped
         while(parent >= 0 && data[parent] > data[child]){
             swap(data, parent, child);
-            // resetting the child and parent values
+            // resetting the child and parent index values
             child = parent;
             parent = (child-1)/2;
         }
     }
 
     public int remove() {
-        int temp = data[0]; // the item being removed is stored to be returned later
+        int temp = data[0];     // the item being removed is stored to be returned later
         data[0] = data[--size]; // takes the value at the end of the heap and places it at the top of the heap
-        siftdown(0); // make sure that the heap is formatted correctly (parent is less than child)
+        siftdown(0);     // make sure that the heap is formatted correctly (parent is less than child)
         return temp;
     }
 
@@ -55,7 +55,6 @@ public class BinaryHeap {
         int [] newArr = new int[data.length*2];
         System.arraycopy(data, 0, newArr, 0 , data.length);
         data = newArr;
-        // grow it
     }
 
 }
